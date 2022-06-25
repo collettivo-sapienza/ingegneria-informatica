@@ -1,0 +1,23 @@
+1) definizione di autovalore, autovettore, autospazio
+2) defizione di dimensione di uno spazio vettoriale (definizione di base, generatori, linearmente indipendenti)
+   esempio di 3 vettori linearmente indipendenti
+3) distanza punto retta nello spazio (attenzione a questo particolare dello spazio)
+4) Punto P perpendicolare alla retta
+5) Matrice rappresentativa di una funzione
+6) Teorema strutturale di uno spazio vettoriale di dimensione finita
+7) Definizione di spazio vettoriale
+8) Relazioni di equivalenza su un insieme
+9) Quando un vettore appartiene al nucleo (controimmagine di un elemento)
+10) Teorema spettrale
+11) Coordinate di un punto rispetto a un piano affine 
+12) Vettore geometrico libero
+13) Quando due spazi sono isomorfi
+14) Definizione di gruppo (con esempio)
+15) Definizione di vettore ortogonale
+16) Definizione di base ortogonale
+17) Definizione di spazio di vettori geometrici liberi nel piano (?) (cos'è un vettore applicato)
+18) Esempio di spazio vettoriale di dimensione finita 
+19) Definizione di norma
+20) Definizione di prodotto scalare
+21) Distanza punto  retta
+22) Diagonalizzazione
