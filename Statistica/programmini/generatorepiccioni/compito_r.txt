@@ -1,0 +1,18 @@
+1
+ varianza  campionaria
+2
+ Intervalli di confidenza
+3
+ Errori di tipo 1 e 2
+4
+ esponenziale
+5
+ legge debole dei grandi numeri, chebishev
+6
+ CDF, PMF, PDF, 
+7
+ Probabilità totale
+8
+ correlazione(X,Y)
+9
+ varianza e media della media campionaria (anche nel caso uniforme che avevo calcolato prima), 

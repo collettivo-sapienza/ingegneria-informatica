@@ -1,0 +1,37 @@
+ Intervalli di confidenza
+ l' uniforme , un esercizio sull'uniforme simile all'esame poi media campionaria, 
+ varianza e media della media campionaria (anche nel caso uniforme che avevo calcolato prima), 
+ legge debole dei grandi numeri, chebishev
+ E fundamental bridge
+ Teorema limite centrale
+ dimostrazione della legge debole dei grandi numeri
+ l'esercizio del compito quello con XY e poi una domanda strana, 
+ tipo avevo delle variabili aleatorie X1... Xn e Y1...Yn e dovevo dirgli i vari legami
+ multinomiale
+ CioÃ¨ basta che gli dimostri chebishev
+ CDF, PMF, PDF, 
+ valore atteso varianza 
+ le due diseguaglianze 
+ la legge debole dei grandi numeri, 
+ varianza, media, varianza campionaria e media campionaria, limite centrale, e poi le varie distribuzioni, 
+ geometrica  
+ esponenziale
+ correlazione
+ regressione lineare
+ binomiale negativa approssimata alla normale
+ binomiale approssimata alla normale
+ Assiomi di Kolmogorov
+ Bayes
+ Probabilità totale
+ Ipergeometrica
+ Poissoniana
+ Processo di Poissonm
+ t-test 
+ z-test
+ test chi quadro pearson
+ test proporzione
+ varianza  campionaria
+ Errori di tipo 1 e 2
+ media e varianza di X+Y, XY
+ covarianza(X,Y)
+ correlazione(X,Y)

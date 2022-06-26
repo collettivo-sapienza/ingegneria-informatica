@@ -1,0 +1,1289 @@
+\documentclass{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[margin=3cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\DeclareUnicodeCharacter{2212}{-}
+\DeclareUnicodeCharacter{2229}{\cup}
+\DeclareUnicodeCharacter{222A}{\cup}
+\DeclareUnicodeCharacter{00D7}{*}
+\DeclareUnicodeCharacter{2265}{\ge}
+\title{STATISTICA E CALCOLO DELLA PROBABILITA'}
+\date{2021-27-03}
+\author{MinchiaSoft}
+\begin{document}
+\maketitle
+“So anyway, what exactly do you think that means . . . a 50\% chance of
+rain?”
+“Perhaps that there is a 75\% chance that it will rain in 66.6\% of the
+places?” 
+(From Inspector Morimoto and the Japanese Cranes, by Timothy Hemion)
+
+"La media e la varianza non danno la conoscenza
+anche se e' un dato di fatto che Hayter e' uno stronzo"
+
+"Lezione chiarissima, grazie mille per le delucidazioni sugli esercizi.
+Comunque sono incredibili alcune coincidenze,
+non saprei calcolare la probabilità che possa accadere (forse lei si
+AAHAHHA)
+ma ho anch'io un orologio a cucù.
+Le auguro una buona serata con una frase di un antico statistico:
+Alea iacta est ;)"
+-cit un moderno statistico
+"Ti do il palo" cit Assistente
+
+\newpage
+
+\tableofcontents{}
+\newpage
+Dispense relative al corso di Probabilità e Statistica de Piccioni a ingegneria informatica/automatica della Sapienza.
+$\newline$
+Si parla di calcolo della probabilità e di statistica inferenziale.
+$\newline$
+Le fonti utilizzate sono principalmente il manuale di Hayter e quello di Ross.
+$\newline$
+Se ci sono errori contattateci a questo link: reclami@minchiasoft.it (non esiste davvero non farlo bruh)
+$\newline$
+Ringraziamo della ispirazione Ananas Molesto.
+$\newline$
+Siamo lieti che il nostro lavoro possa essere utile a qualcun altro.
+$\newline$
+Forza Roma.
+\chapter{PROBABILITÀ}
+
+\section{Assiomi della Probabilità:}
+
+\begin{enumerate}
+	\item La probabilità di un evento è un reale non negativo.
+	\item La probabilità dello spazio dei campioni è 1.
+	\item Qualsiasi sequenza numerabile di insiemi disgiunti soddisfa $P(\bigcup_{\infty}) = \sum_{\infty}p_{i}$
+	\item La funzione probabilità è monotona e definita da 0 a 1.
+	\item La probabilità di $\emptyset$ è 0.
+\end{enumerate}
+
+
+
+
+\section{Combinazione di eventi:}
+$\newline$
+\begin{equation}
+P(A \cap  B) + P(A \cap B  ') = P(A)
+\end{equation}
+\begin{equation}
+P(A \cap B) + P(A' \cap B) = P(B)
+\end{equation}
+Se eventi disgiunti :\newline
+
+\begin{equation}
+p(a \cup b)= p(a) + p(b)\newline
+\end{equation}
+senno':\newline
+\begin{equation}
+p(a \cup b)= p(a) + p(b) - p(a \cap b) \newline
+\end{equation}
+Unione tre eventi:
+\begin{equation}
+P(A∪B∪C)=[P(A)+P(B)+P(C)] - [P(A∩B)+P(A∩C)+P(B∩C)]+P(A∩B∩C)
+\end{equation}
+
+\section{Leggi di de morgan:}
+$\newline$
+$(a \cap b)' = a' \cup b'$
+$\newline$
+$\newline$
+$(a \cup b)' = a' \cap b'$
+$\newline$
+
+\section{Bayes e condizionata:}
+
+\begin{equation}
+P(A|B) = P(A \cap B) / P(B)
+\end{equation}
+\begin{equation}
+	P(Ai|B) = \frac{P(Ai)*P(B|Ai)}{P(B)}
+\end{equation}
+\begin{equation}
+P(B) =\sum_{i=0}^{n} P(Ai)*P(B|Ai) 
+\end{equation}
+
+\section{Eventi Indipendenti:}
+
+If two events are independent, then the probability    
+that they both occur can be calculated by
+multiplying their individual probabilities. : VERO
+
+It is always true that $P(A\mid B) + P(A'\mid B) = 1.$ : VERO 
+
+It is always true that $P(A\mid B) + P(A\mid B_{i}) = 1.$	: FALSO
+
+It is always true that $P(A\mid B) \le P(A)$. : FALSO
+
+
+\section{Combinazioni, Permutazioni, Disposizioni:}
+
+There are n! ways in which n objects can be arranged in a line. If the line is made
+into a circle and rotations of the circle are considered to be indistinguishable, then
+there are n arrangements of the line corresponding to each arrangement of the circle.
+Consequently, there are
+$(n − 1)!$ ways to order the objects in a circle.
+
+Consider 5 blocks, one block being Andrea and Scott and the other four blocks being
+the other four people. At the cinema these 5 blocks can be arranged in 5! ways, and
+then Andrea and Scott can be arranged in two different ways within their block, so
+that the total number of seating arrangements is 2 × 5! = 240.
+Similarly, the total number of seating arrangements at the dinner table is 2×4! = 48.
+If Andrea refuses to sit next to Scott then the number of seating arrangements can
+be obtained by subtraction. The total number of seating arrangements at the cinema
+is 720−240 = 480 and the total number of seating arrangements at the dinner table
+is 120 − 48 = 72.
+
+
+
+
+\subsection{Permutazioni e basta}
+Modi in cvi  posso ordinare n oggetti, che sarebbe 
+$\newline$
+$n!$
+$\newline$
+
+
+
+
+\subsection{Permutazioni con ripetizioni}
+
+Modi in cui posso ordinare n oggetti, di cui alcuni sono uguali(interscambiambili)
+$\newline$
+$n_{i}$ è il numero di oggetti uguali del tipo i
+$\newline$
+
+$Volte = \frac{n!}{n_{1}! * ...* n_{k}!}$
+$\newline$
+\subsection{Disposizioni e basta:}
+Modi in cui posso ordinare una selezione di k oggetti da un totale di n oggetti, in cui l'ordine è importante
+\begin{equation}
+modi = \frac{n!}{(n-k)!}
+\end{equation}
+
+
+\subsection{Disposizioni con ripetizioni}
+\begin{equation}
+modi = n^k
+\end{equation}
+
+\subsection{Combinazioni e basta }
+Modi in cui posso ordinare una selezione di k oggetti da un totale di n oggetti,
+ma l'ordine NON è importante
+\begin{equation}
+	modi = \frac{n!}{(n-k)!k!} =\binom{n}{k}
+\end{equation}
+
+\subsection{Combinazioni con ripetizioni}}
+Modi in cui posso ordinare una selezione di k oggetti da un totale di n oggetti,
+ma l'ordine NON è importante e certi so uguali
+
+\begin{equation}
+	modi = \binom{n+k-1}{k}
+\end{equation}
+
+
+
+
+\newpage
+\section{Studio delle variabili aleatorie}\
+
+
+
+\begin{tabularx}{0.8\textwidth} { | >{\raggedright\arraybackslash}X | >{\centering\arraybackslash}X | >{\raggedleft\arraybackslash}X | }
+   \hline
+		Stalin & Discreta & Continua \\ 
+\hline
+	F(x) & cumulative distribution function & cumulative distribution function \\ 
+\hline
+	f(x) & probability mass function & probability density function \\ 
+\hline   
+	E(x) & \sum  $p_{i} x_{i}$ & $\int_{S} x f(x)$  \\
+\hline   
+	mediana   & non c'e`  & $x \mid F(x) = 0.5$  \\
+\hline   
+	Varianza: & $E(x^2)-(E(x))^2$ & $E(x^2) = \int x^2f(x)$ \\
+\hline   
+\end{tabularx}
+
+\newline
+\newline
+\newline
+In una variabile continua ho:
+$\newline$
+$\newline$
+$f(x) = dF(X)/dx$ 
+$\newline$
+$\newline$
+$F(x) = \int_{a}^{x} f(x) $
+$\newline$
+$\newline$
+$\sigma = \sqrt{VAR(x)}$ 
+$\newline$
+$\newline$
+
+
+
+\subsection{VARIABILI ALEATORIE CONGIUNTE:}
+
+NB integrale $ \int_{S} f(x,y) dxdy = 1 $ \ SEMPRE!!!
+
+Dis Marginale:
+
+ae $f_{x}(X)= \int_{a}^{b} f(x,y) dy$
+
+senno con le discrete e' la somma delle righe o delle colonne
+
+Calcolo covarianza:
+$\newline$
+$COVAR(X,Y) = E(XY) - (E(X)E(Y))$
+
+
+E(XY)=
+
+\hspace*{20mm}%	
+D: $\sum  x_{i}* y_{j} * p_{ij}$ (ae 1*1*1/4 + 2*1*2/3+...)
+
+\hspace*{20mm}%	
+C: $\int_{a}^{b} \int_{c}^{d} xy*f(x,y)dxdy$
+
+
+Calcolo correlazione:
+
+$Corr(X,Y) = \frac{Covar(X,Y)}{\sqrt{Var(X)Var(Y)}}$
+$\newline$
+Btw, la correlazione è un valore compreso tra 1 e -1
+Se è 0 si dice che le variabili non sono correlate
+(o anche "incorrelate" secondo piccioni)
+\section{Combinazioni  lineari e non di variabili aleatorie}
+
+Lineari:
+Se ho $Y=aX+b$
+avro':
+$\newline$
+\hspace*{20mm}%	
+	$E(Y)=aE(x)+b$\newline
+\hspace*{20mm}%	
+	$Var(Y)=a^2*Var(X)$\newline
+	
+(se ci sono sottrazioni la media si sottrae, invece la var si somma sempre)
+
+Se sono non lineari devo fare l'integrale della f(x) e poi sostituire con una Y
+che sia minore della X che mi sono calcolato
+
+esempio:\newline
+\hspace*{20mm}%	
+	Ho $f(x)=1$	per $ 0 \le x \le 1$ e $Y=e^x$ \newline
+\hspace*{20mm}%	
+	Quindi F(X)=x\newline
+\hspace*{20mm}%	
+	$P(e^x <= y ) \longrightarrow$  $P(X <= ln(y)) \longrightarrow$  $Fx(ln(y))\longrightarrow$ 
+	$\newline$
+\hspace*{20mm}%	
+		 ln(y)\newline\newline
+
+\hspace*{20mm}%	
+	$f_{y}= \frac{dF_{y}(y)}{dy} = \frac{1}{y}$\newline
+
+
+a) The variance of a random variable is measured in the
+same units as the random variable.				F\newline
+(b) In a diving competition, the scores awarded by judges
+for a particular type of dive have an expected value
+of 78 with a standard deviation of 5. If the scores
+are doubled so that they can be compared with scores
+from an easier type of dive, the new scores will have an
+expected value of 156 and a standard deviation of 10.		V\newline
+(c) The variance of the difference between two
+independent random variables cannot be smaller than
+the larger of their two variances.				V\newline
+(d) If a continuous random variable has a symmetric
+probability density function, then the mean and the
+median are identical.						V\newline
+(e) If X is a continuous random variable, then
+$P(X ≥ x) = P(X > x)$ for any value of x.     			V\newline
+(f) If X is a discrete random variable, then
+$(X ≥ x) = P(X > x)$for any value of x.				F\newline
+
+
+\section{DISTRIBUZIONI DISCRETE}	
+
+RICORDA: BINOMIALE, BINOMIALE NEGATA E GEOMETRICA CALCOLANO COSE MOLTO CORRELATE!!!!!
+
+\section{Distribuzione Binomiale:}
+
+n bernoulli trials, misura i successi su n esperimenti indipendenti
+\begin{equation}
+	P(X=x)=\mathrm{C}_{x}^{n}\ p^x(1-p)^{n-x}
+\end{equation}
+$\newline$
+$E(x)=np$
+$\newline$
+$Var(x)=np(1-p)$
+
+\section{Proporzione successi:}
+
+$Y=\frac{X}{n}$
+$\newline$
+$E(x)=p$
+$\newline$
+$Var(x)=\frac{p(1-p)}{n}$
+
+\section{Distribuzione Geometrica:}
+
+Data un sequenza bernoulli trials la con prob. successo p, la distribuzione
+geometrica misura il numero
+di tentativi fatti fino al primo successo.
+$\newline$
+
+$P(X=x)=(1-p)^{x-1}p$
+$\newline$
+
+$E(x)=\frac{1}{p}$
+$\newline$
+
+$Var(x)=\frac{1-p}{p^2}$
+$\newline$
+
+P. cumulativa $F(x)=1-(1-p)^x$
+
+\section{Distribuzione Binomiale Negativa:}
+
+numero di tentativi fino al successo resimo
+\begin{equation}
+	P(X=x)=\binom{x-1}{r-1}(1-p)^{x-r}p^r
+\end{equation}
+$\newline$
+$E(x)=\frac{r}{p}$ 
+$\newline$
+$Var(x)=\frac{r(1-p)}{p^2}$
+
+\section{Distribuzione Ipergeometrica:}
+
+Tipo la binomiale, ma senza replacement (la p di scegliere un oggetto con prob iniziale r/N diminuisce via via).
+
+con ad eesempio:
+$\newline$
+	-	N tot palline
+$\newline$
+	-	r palline rosse
+$\newline$
+	-	n numero di palline prese a caso
+$\newline$
+	- 	x il num di palline rose prese (avendo preso n palline a caso)
+$\newline$
+\begin{equation}
+	P(X=x)=\frac{\binom{r}{x}\binom{N-r}{n-x}}{\binom{N}{n}} 
+\end{equation}
+$\newline$
+
+$E(X)=\frac{nr}{N}$
+$\newline$
+$Var(X)= \frac{N-n}{N-1}\ \frac{nr}{N}\ (1-\frac{r}{N})$
+
+\section{Distribuzione di Poisson: (pesce)}
+
+Viene usata per modellare il numero di eventi che avviene in una certa unità di tempo,
+distanza o volume e ha media e varianza pari al parametro lambda $\lambda$.
+
+\begin{equation}
+	P(X=x)= \frac{e^{-\lambda}\lambda^x}{x!}
+\end{equation}
+$E(X)=Var(X)=\lambda$
+
+
+
+La poissoniana con lambda $\lambda=np$ puo' approsimare una binomiale con n grande e p piccolo, quindi, dato che un binomiale
+puo approssimare un'ipergeometrica con N grande e r piccolo, LA POISSONIANA PUO' APPROSSIMARE L'IPERGEOMETRICA
+
+
+\section{Distribuzione Multinomiale:}
+
+generalizzazione della binomiale, ci sono n trials che possono avere k outcomes
+
+X1,..,Xk misurano quante volte deve avvenire un determinato outcome
+
+\begin{equation}
+	P(X_{1}=x_{1},...,X_{n}=x_{n})= \frac{n!}{x_{1}!*...*x_{k}!} * (p_{1}^{x_{1}}*...*p_{k}^{x_{k}})
+\end{equation}
+ogni Xi ha la propria media e la propria varianza:
+
+$E(X_{i})=n*p_{i}$
+
+$Var(X_{i})=n*p_{i}(1-p_{i})$ 
+
+D : What is the probability that four sets of right-handed
+    clubs are sold before four sets of left-handed clubs
+    are sold?
+R:  Mi calcolo con la binomiale negata la p di ne vendo 4 in 4 tenativi + p di 5 tentativi +
+    + p di 6 + p di 7 (a 8 significa che le altre hanno gia venduto 4 pezzi)  
+
+
+\section{DISTRIBUZIONI CONTINUE}
+
+\subsection{Distribuzione Uniforme:}
+La distr uniforme e una retta orizzontale in un intervallo a,b
+
+tutti gli eventi sono equiprobabili
+
+\begin{equation}
+	f(x)=\frac{1}{b-a}\ \ \ \ a \le x \le b
+\end{equation}
+
+\begin{equation}
+	F(x)= \frac{x-a}{b-a}
+\end{equation}
+
+\begin{equation}
+E(x)= \frac{a+b}{2}
+\end{equation}
+\begin{equation}
+Var(x)= \frac{(b-a)^2}{12}
+\end{equation}
+
+\subsection{Distribuzione Esponenziale:}
+
+utile per modellare tassi di rottura e tempi di attesa
+\begin{equation}
+	f(x)=\lambda*e^{-\lambda x}
+\end{equation}
+\begin{equation}
+	F(x)= 1-e^{-\lambda x}
+\end{equation}
+
+$E(x)=\sigma f(x)=\frac{1}{\lambda}$\\\
+$Var(x)=\frac{1}{\lambda^2}$
+
+
+The implications of the memoryless property can be rather confusing when first encountered.
+Suppose that you are waiting at a bus stop and that the time in minutes until the arrival
+of the bus has an exponential distribution with λ = 0.2. The expected time that you will wait
+is consequently 1/λ = 5 minutes. However, if after 1 minute the bus has not yet arrived, what
+is the expectation of the additional time that you must wait?
+Unfortunately, it has not been reduced to 4 minutes but is still, as before, 5 minutes. This is
+because the additional waiting time until the bus arrives beyond the first minute during which
+you know the bus did not arrive still has an exponential distribution with λ = 0.2. In fact,
+as long as the bus has not arrived, no matter how long you have waited, you always have an
+expected additional waiting time of 5 minutes! This is true right up until the time you first
+spot the bus coming.
+
+$P(X >= x_{0}) = P(X \ge x_{0}+y) = e^{- \lambda x}$
+
+la probabilita che un oggetto funzionera' per un ulteriore periodo di tempo e la stessa sia che l'oggetto
+sia nuovo sia che sia gia utilizzato da un po
+
+\subsection{Processo di Poisson:}
+
+data una serie di intervalli di tempo in sequenza la distribuzione di N(t) (del tempo tra un avvenimeto e un altro)
+e una distr esp intorno a lambda, e il numero di eventi che avvengono in un detemtinato intervallo di tempo e una distr poissoniana
+intorno a $\lambda t$
+
+Quindi se N(t) e un processo di Poisson di intensita $\lambda$:
+
+	1)	il numero di eventi che avvengono in un intervallo di tempo [0,t] e modellato
+		da una distr di Poisson intorno a $\lambda$t
+
+	2)	i tempi che separano gli eventi di un processo di Poisson di intensita' $\lambda$
+		sono una successione di var aleatorie esponenziali di intensita' $\lambda$ tra di loro
+		indipendenti
+
+
+\subsection{Distribuzione Gamma:}
+
+E' una generalizzazione della dist esponenziale e ha importanti applicazioni nello studio della teoria dell'affidabilita'
+e dei processi di Poisson
+
+la funzione gamma(k) $\Gamma (k)$ è una generalizzazione del concetto di fattoriale:
+
+$\Gamma(k)=\int_{0}^{\inf} x^{k-1}*e^{-x} dx $
+
+$\Gamma(k)=(k-1)\Gamma(k-1)$
+
+in particolare per k intero positivo e $k > 1$:
+
+$\Gamma(n)=(n-1)!$
+
+non ci sono altre modi noti per saltare l'integrale negli altri casi
+
+casi particolari:
+
+$\Gamma(1)=1$
+
+$\Gamma(1/2)=\sqrt{\pi}$
+
+k=forma e lambda=scala
+$\newline$
+La distr gamma con parametri $k \gt\ maggiore 0\ e\ \lambda\ maggiore \gt 0$ ha :
+
+\begin{equation}
+	f(x)=\frac{\lambda^k\ x^{k-1}\ e^{-\lambda*x}}{\Gamma(k)}$
+\end{equation}
+$E(x) = \frac{k}{lambda}$  
+$Var(x)=\frac{k}{lambda^2}$
+
+In un processo di Poisson il tempo che viene impiegato per fare k eventi ha una distrizione gamma
+
+la gamma e la somma di piu distr esponenziali
+
+
+\section{Distribuzione Normale o Gaussiana:}
+
+E' figa perche' modella natruralmente la distribuzione degli errori e grazie al teorema del limite centrale
+appossima decentemente il comportamento di un numero notevole di fenomeni casuali
+
+ha come parametri la media $\mu$ e la dev std  $\sigma$ e la pdf e' una curva a campana (curva di Gauss) simmetrica intorno alla media
+$N(\mu,\sigma^2)$
+\begin{equation}
+	f(x)= \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}
+\end{equation}
+$E(x)= \mu$
+$Var(x)=\sigma^2$
+$\newline \newline$
+Se si fa una trasformaxione lineare di una distr gaussaina X tipo Y=aX+b
+Y e' a sua volta una gaussiana con media $\mu+b$e varianza a^2*sigma^2
+
+\subsection{Normale Standard}
+Quindi se ho
+\begin{equation}
+Z= \frac{X-\mu}{\sigma}
+\end{equation}
+Ho la cosidetta normale standard, ovvero con media 0 e var 1, di cui la cumulativa è
+FI(x) ( $\Phi(x)$ ) che e' molto utile per calcolare i valori di probabilita cumulativa nelle distribuzioni
+dato che abbiamo le tabelle dove controllare i valori.
+ae 
+\begin{equation}
+	P(X \le b) = \Phi (\frac{b-\mu}{\sigma})
+\end{equation}
+da cio' segue che la prob di un intervallo si calcola:
+\newline
+$P(a \le x \le b) = \Phi (\frac{b-\mu}{\sigma})-\Phi (\frac{a-\mu}{\sigma})$
+\newline
+\newline
+$P(X \le -x) = 1-P(X \le x)$
+\newline
+\newline
+La distanza interquartile di una gaussiana qualsiasi e' pari a $1.3490*\sigma$
+\newline
+\newline
+
+In general, if $\bar{X}$ is the average of n of these random
+variables, what is the smallest value of n for which
+$P(| \bar{X} | ≤ 0.5) ≥ 0.99?$
+
+sol:
+
+$0.5*\sqrt{n}$ = valore della std con $p= 0,995$ = 2,5...
+
+$n \ge 27$
+
+(si risolve coi punti critici della gaussiana)
+\section{Disuguaglianza di Markov}
+La probabilità che x sia maggiore uguale di alpha è minore uguale della media di x su alpha
+\begin{equation}
+	P(X\ge\alpha) \le \frac{E(x)}{\alpha}
+\end{equation}
+
+\section{Diseguaglianza di Chebichev:}
+\begin{equation}
+	P( \mu-c\sigma \le x \le \mu + c\sigma) >= 1 - \frac{1}{c^2}
+\end{equation}
+
+\paragpaph{Dimostrazione:}
+Si mette il complementare, si eleva tutto al quadrato per togliere
+il valore assoluto e si fa la Disuguaglianza di Markov
+\newline
+\newline
+$P(\mid X - \mu \mid \ge c\sigma) \to P((X - \mu)^2 \ge (c\sigma)^2) \to P(Y) \le \frac{E((X - \mu)^2)}{(c\sigma)^2}$
+\begin{equation}
+	P(Y) \le \frac{1}{c^2}
+\end{equation}
+	
+
+\paragraph{Problema stronzo:}
+Probabilita' tra mi -c e mi + c
+
+\newline
+\newline
+$P( \mu - c \le x \le \mu + c) = K$
+
+	1) normalizzando si ottiene che :
+		$p(c/sigma)= k+ \frac{1-k}{2}$\newline
+	2) occorre vedere sulla tabella della gaussiana a che valore di z=z0 corrispone
+
+	3) c=sigma * z0
+\newline\newline\newline
+
+\subsection{Distribuzione chi quadro:}
+
+La distribuzione chi quadro e la somma di n quadrati di distribuzioni normali standard:
+$\newline$
+$\newline$
+$\newline$
+$X=Z_{1}^2+...+Z_{n}^2$
+$\newline$
+X di dice variabile aleatoria chi quadro con n gradi di liberta'
+$\newline$
+La distribuzione chi quadro puo' essere approssimata da una distr Gamma con parametri:
+$\newline$
+lambda $\lambda = \frac{1}{2}$\newline
+$\newline$
+e kappa $k=\frac{n}{2}$
+$\newline$
+$\newline$
+e con $E(X)=n$  e  $Var(X)=2n$
+$\newline$
+$\newline$
+Se $X_{n}$ è una chi quadro con $n$ gradi di libertà,
+$a$ è un numero reale tra 0 e 1 si definisce
+la quantità $X_{a,n}^2$ come la qta per cui vale:
+$\newline$
+$\newline$
+$P(X \ge (X_{a,n})^2 ) = a$
+
+\subsection{Distribuzione T:}
+
+\begin{equation}
+	f(x) = t_{n} = \frac{N(0,1)}{\sqrt{\frac{X_{n}^{2}}{n}}}
+\end{equation}
+$\newline$
+Per valori molto grandi di n coverge alla gaussiana standard:
+$\newline$
+$\newline$
+$E(x)= 0$ , $n >=2$
+$\newline$
+$\newline$
+$Var(X)= \frac{n}{n-2}$ ,   $n \ge 3$
+$\newline$
+$\newline$
+In maniera analoga alla Chi quadro si puo definire un qta ta,n per cui:
+$\newline$
+$P(T_{n} >= t_{a,n}) = a$
+$\newline$
+poi $a = 1-P(T_{n} \ge -t_{a,n})$
+$\newline$
+Per la simmetria della dist intorno allo 0
+$\newline$
+e quindi:
+$\newline$
+$P(T_{n} \ge -t_{a,n})= 1-a$
+$\newline$
+quindi $-t_{a,n}=t_{1-a,n}$
+$\newline$
+
+
+
+
+
+
+\chapter{STATISTICA}
+
+\section{Media Campionaria:}
+
+Ho n varilibili aleatorie indipendenti (una popolazione) con la stessa distribuzione e media mi e var sigma^2
+
+la media campionaria $\bar{X}$ è definita come:
+
+$\bar{X} = \frac{X1+...+Xn}{n}$
+
+$E(\bar{X})= \mu$
+
+$Var(\bar{X})= \frac{\sigma^2}{n}$
+
+$\bar{X}$ è centrata in mi e la sua varibilità si riduce con l'aumentare di n.
+
+
+\section{Teorema del Limite Centrale:}
+
+"La somma di un numero elevato di variabili indipendenti tende ad avere una distribuzione approssimativamente normale"
+
+Siano $X_{1},...,X_{n}$ variabili aleatorie indipendenti ed identicamente distribuite, 
+tutte con media $\mu$ e varianza $\sigma^2$:
+
+allora $X_{1}+...+X_{n}$ con un n molto elevato e' approssimativamete una Normale con
+\newline
+media $n\mu$ e varianza $n\sigma^2$
+
+quindi:
+
+$\frac{X1+...+Xn - n*mi}{\sigma \sqrt{n}}$ è approssimativamente distribuita come una Normale standard Z.
+
+\section{Legge dei grandi numeri}
+Leggi sulle bernulliane(eventi che possono accadere o no).
+\subsubsection{Debole}
+La probabilità che la distanza tra la media campionaria e la media sia maggiore di un numero arbitrariamente piccolo
+tende a 0 con l'aumentare del numero di osservazioni fatte.
+\begin{equation}
+	n \to \infty \Longrightarrow P(\mid \bar{X}_{n} - \mu \mid > \varepsilon) \to 0 
+\end{equation}
+\subsubsection{Forte}
+All'aumentare del numero di osservazioni fatte, la probabilità che media campionaria e la media vera coincidano tende a 1
+\begin{equation}
+	P((\lim_{n \to \infty} \bar{X}_{n}) = \mu) = 1
+\end{equation}
+\subsubsection{Dimostrazione}
+Dato che la combinazione de Distribuzioni co media $\mu$
+e varianza $\sigma^2$ tende a una Gaussiana, so che la media campionaria  va a
+$\frac{n\mu}{n}$, ma tanto le n si semplificano e diventa $\mu$ sisi.
+\newline
+La dimostrazione è finta ma forse se la imbastisci al piccioni non ci fa caso.
+
+\section{Distribuzione approssimata di una Media Campionaria:}
+
+$\bar{X}=(1/n)\sum_{1}^{n} x_{i}$
+$\newline$
+E quindi $\sqrt{n}\frac{(\bar{X}-\mu)}{\sigma}$ che si comporta come un normale standard per il TLC
+$\newline$
+
+IL MIO CAMPIONE DEVE ESSERE ALMENO DI 30 PER COMPORTARSI SUFFICIENTEMENTE COME UNA GAUSSIANA.
+
+\section{Varianza Campionaria:}
+\begin{equation}
+	S^2=\frac{1}{n-1}\sum_{1}^{n} (X_{i}-\bar{X})^2 
+\end{equation}
+
+
+$S=\sqrt{S^2}$ := dev std campionaria
+$\newline$
+
+$E(S^2)= \sigma^2$ (cioe' la var delle distribuzioni considerate)
+
+La distribuzione congiunta di $\bar{X}$ e $S^2$ e' data da:
+$\newline$
+
+$\frac{(n-1)*S^2}{sigma^2}$ che per motivi matematicamente
+validi si comporta come una Chi quadnro con n-1 gradi di liberta'
+$\newline$
+"Se $X_{1},...,X_{n}$ e' un campione proveniente da una distr normale con media $\mu$ e var $\sigma^2$  allora 
+$\bar{X}$ ed $S^2$ sono variabili
+$\newline$
+aleatorie indipendenti, inoltre $\bar{X}$ e' normale con media $\mu$  e var $\frac{\sigma^2}{n}$
+$\newline$
+, e $\frac{(n-1)*S^2}{\sigma^2}$ e' una Chi quandro con n-1 gradi di liberta'"
+$\newline$
+
+\chapter{Inferenza Statistica}
+"L'inferenza statistica (o statistica inferenziale) è il procedimento per cui
+si inducono le caratteristiche di una popolazione dall'osservazione di una parte di essa (detta "campione"),
+selezionata solitamente mediante un esperimento casuale (aleatorio)"
+
+Campione:
+
+Scegliendo un campione casuale di intervistati si ottiene una buona approssimazione dei dati da calcolare sull'intera popolazione
+a causa di fenomeni matematici incomprensibili che
+leggeremo un giorno, forse, (come le doc di MongoDB)
+(la distribuzione all'interno del campione che prendo di 
+individui con una determinata caratteristica che 
+si manifesta nella popolazione con probabilità p può essere approssimata da una binomiale su
+popolazioni molto grandi)
+
+\section{Stima,Parametri,Statistiche e Stimatori}
+
+La stima è quando ricavi i parametri di una popolazione dalle osservazioni che fai sul campione.
+$\newline$
+Parametri sono le caratteristiche della popolazione, tipo media, varianza, o proporzione di capelli blu.
+$\newline$
+La statistica è una funzione in cui ho solo variabili già note.
+$\newline$
+Lo stimatore è la funzione che mi perfette di stimare un parametro(il valore
+atteso dellla funzione stimatore è il parametro).
+$\newline$
+
+
+\section{Teoria della stima}
+Le stime possono essere:
+
+\subsection{Puntuali:}  
+stimo un valore preciso := una stima corretta (o "non distorta")
+ha lo stesso valore del parametro e quella piu efficiente e' quella con
+una deviazione standard minore.
+Di solito si usano la Media Campionaria e la Varianza Campionaria
+per stimare la media e la varianza
+\subsection{Intervallari:}  
+Viene stimato un intervallo di confidenza all'interno del
+quale si dovrebbe trovare un parametro con un livello di confidenza pari a (1-a)
+
+\section{Stime intervallari della Media:}
+
+\subsection{Intervallo -t a due lati:}
+$\newline$ 
+
+Devo stimare l'intervallo di confidenza della media della mia distribuzione
+non sapendo esattamente quale sia la mia varianza (uso quella campionaria)
+$\newline$ 
+quindi dato il mio intervvallo con livello di confidenza $(1 - a) = 0.95$
+$\newline$ 
+la mia media $\mu$ si trova
+$\newline$ 
+\begin{equation}
+	\bar{x}- t_{\frac{\alpha}{2},n-1}\frac{S}{\sqrt{n}} \le \mu 
+	\le \bar{x} + t_{\frac{\alpha}{2},n-1}\frac{S}{\sqrt{n}}		
+\end{equation}
+
+
+È un intervallo centrato in $\mu$ 
+dove $t_{\frac{\alpha}{2},n-1}$ è il valore critico (critical point) 
+della distribuzione t in a/2 con n-1 gradi
+di liberta'
+
+la larghezza dell'intervallo è pari a 
+$\newline$ 
+$L = 2 t_{\frac{\alpha}{2},n-1}\frac{S}{\sqrt{n}}$ = 2*punto critico*errore semplice(standard error)
+
+
+\subsection{Intervallo -t a un lato:}
+Avendo:
+$\newline$ 
+\hspace*{20mm}%	
+intervallo di confidenza:=$(1-\alpha)$
+$\newline$ 
+\hspace*{20mm}%	
+population mean := $\mu$
+$\newline$ 
+\hspace*{20mm}%	
+numero di "continuous data observations":= n
+$\newline$ 
+\hspace*{20mm}%	
+sample mean := $\bar{x}$
+$\newline$ 
+\hspace*{20mm}%	
+sample standard deviation s
+$\newline$ 
+
+Gli intervalli t a un lato sono:
+
+\begin{equation}
+	\mu \in (-\infty, x+ t_{\alpha,n-1}\frac{S}{\sqrt{n}} )
+\end{equation}
+\begin{equation}
+	\mu \in (x- t_{\alpha,n-1}\frac{S}{\sqrt{n}},+\infty  )
+\end{equation}
+
+
+\subsection{Intervallo -z a due lati:}
+
+Devo stimare l'intervallo di confidenza della media della mia distribuzione
+ma CONOSCO LA VARIANZA $\sigma^2$
+\begin{equation}
+	\bar{x}- \frac{z_{\frac{\alpha}{2}}\sigma}{\sqrt{n}} \le \mu
+	\le \bar{x}- \frac{z_{\frac{\alpha}{2}}\sigma}{\sqrt{n}}	
+\end{equation}
+Con $z_{\alpha}$ che è il punto critico della normale std per a
+$\newline$ 
+Cioè $z_{\alpha}$ è l'analogo di $t_{\alpha}$ quando la standard deviation 
+$\sigma$ è conosciuta
+
+\subsection{Intervallo -z a un lato:}
+
+\begin{equation}
+	\mu \in (- \infty , \bar{x}+ \frac{z_{a}\sigma}{\sqrt{n}} )
+\end{equation}
+\begin{equation}
+	\mu \in (\bar{x}- \frac{z_{a}\sigma}{\sqrt{n}} , +\infty  )
+\end{equation}
+
+\section{Test d'ipotesi}
+definisco a partire da un'analisi di una certa popolazione delle ipotesi derivate dai dati.
+$\newline$ 
+
+\subsection{Ipotesi nulla e ipotesi alternativa:}
+L'ipotesi nulla AFFERMA che la mia distribuzione sulla popolazione soddisfi una certa proprietà
+$\newline$ 
+L'ipotesi alternativa e' costruita NEGANDO quella nulla
+$\newline$ 
+\subsection{P-value:}
+il p-value e' un valore compreso tra 0 e 1.
+$\newline$ 
+Se assume un valore minore di 0,01 l'ipotesi nulla viene respinta.
+$\newline$ 
+Se assume un valore piu' grande di 0,10 l'ipotesi nulla viene considerata ma non e' necessariamente vera.
+$\newline$ 
+Se assume un valore tra 0,01 e 0,10 non ho informazione sull'ipotesi nulla,
+$\newline$ 
+\subsection{Potenza del test}
+Si definisce potenza del test 1-β la probabilità di Rigettare H0 quando H0 è falsa.
+Questo parametro esprime quindi l’efficacia del test di individuare l’ipotesi alternativa.
+1-B = P(Rigettare H0|H0 è falsa)
+\section{Errori:}
+\subsection{di tipo 1:}
+Definito $\alpha$ il livello di significatività scelto per il test di ipotesi,
+esso esprime anche la probabilità che si manifesti un errore detto di tipo 1.
+Tale errore consiste nel rigettare H0 pur essendo H0 è vera
+$\alpha$ = P(Rigettare H0|H0 è vera)
+Se diminuisco $\alpha$ diminuisco la possibilità dell'errore di tipo 1.
+\subsection{di tipo 2:}
+$\beta$ esprime la probabilità che si manifesti un errore di tipo 2,
+ovvero un errore in cui non si rigetta H pur essendo $H_{0}$ falsa.
+$\newline$ 
+$\beta$ = P(Non rigettare H0|H0 falsa)
+$\newline$ 
+Per diminuire $\beta$ occorre aumentare la potenza del test. Questo può essere fatto o diminuendo il livello di confidenza del test (aumentando la probabilità di un errore di tipo 1 oppure aumentando la dimensione del campione.
+
+\subsection{t Test a due lati}
+
+\paragraph{Ipotesi Nulla:} H0: ho media $\mu = \mu_{0}$ (quella stimata)  
+\paragraph{Ipotesi Alternativa:} H1: $\mu \neq \mu_{0}$ 
+
+$\newline$ 
+$p-value = 2*P(x \ge |t|)$
+$\newline$ 
+t è  la distanza tra il valore della media campionaria e la nostra media stimata diviso la 
+dev std campionaria
+\begin{equation}
+	t= \frac{\sqrt{n}(x/-mi0)}{S}
+\end{equation}
+
+
+
+\paragraph{Rifiuto l'ipotesi nulla} se $|t| > t_{\frac{a}{2},n-1}$
+\paragraph{Accetto l'ipotesi nulla} se $|t| \le  t_{\frac{a}{2},n-1}$
+
+
+
+\subsection{T test a un lato:}
+
+	$\mu \le \mu_{0}$
+
+\paragraph{Ipotesi Nulla:} H0: ho media $\mu \le \mu_{0}$ (quella stimata) 
+\paragraph{Ipotesi Alternativa:} H1: $\mu > \mu_{0}$ 
+
+$\newline$ 
+$p-value = P(x \ge t )$
+$\newline$ 
+t è la distanza tra il valore della media campionaria e la nostra media stimata diviso la 
+dev std campionaria
+
+\begin{equation}
+	t= \frac{\sqrt{n}*(x/-\mu_{0})}{S}
+\end{equation}
+
+\paragraph{Rifiuto l'ipotesi nulla} se $|t| > t_{\frac{a}{2},n-1}$
+\paragraph{Accetto l'ipotesi nulla} se $|t| \le  t_{\frac{a}{2},n-1}$
+
+\subsection{INVECE PER VEDERE SE MI $\ge$ MI0:}
+
+\paragraph{Ipotesi Nulla:} H0: ho media $\mu \ge \mu_{0}$ (quella stimata) 
+\paragraph{Ipotesi Alternativa:} H1: $\mu < \mu_{0}$ 
+
+$\newline$ 
+$p-value = P(x \le t )$
+$\newline$ 
+t è la distanza tra il valore della media campionaria e la nostra media stimata diviso la 
+dev std campionaria
+$t= \frac{\sqrt{n}*(\bar{x}-\mu_{0})}{S}$
+
+\paragraph{Rifiuto l'ipotesi nulla} se $|t| < t_{\frac{a}{2},n-1}$
+\paragraph{Accetto l'ipotesi nulla} se $|t| \ge  t_{\frac{a}{2},n-1}$
+
+\section{z test a due lati}
+
+\paragraph{Ipotesi Nulla:} H0: ho media $\mu = \mu_{0}$ (quella stimata) 
+\paragraph{Ipotesi Alternativa:} H1: $\mu \neq \mu_{0}$ 
+
+$\newline$ 
+$p-value = 2*\Phi(- |z|)$
+$\newline$ 
+z è  la distanza tra il valore della media campionaria e la nostra media stimata diviso la 
+dev std della distribuzione
+\begin{equation}
+	z= \frac{\sqrt{n}(\bar{x}-\mu_{0})}{\sigma}
+\end{equation}
+
+
+\paragraph{Rifiuto l'ipotesi nulla} se $|z| > z_{\frac{a}{2}}$
+\paragraph{Accetto l'ipotesi nulla} se $|z| \le z_{\frac{a}{2}}$
+
+\section{Z test a un lato:}
+
+\subsection{Verificare che $\mu \le \mu_{0}$:}
+\paragraph{Ipotesi Nulla:} H0:= ho media $\mu \le \mu_{0}$ (quella stimata) 
+\paragraph{Ipotesi Alternativa:} H1:= $\mu > \mu_{0}$ 
+$\newline$ 
+$\newline$ 
+$p-value = 1-\Phi(z)$
+$\newline$ 
+z è  la distanza tra il valore della media campionaria e la nostra media stimata diviso la 
+dev std della distribuzione
+\begin{equation}
+	z= \frac{\sqrt{n}(\bar{x}-\mu_{0})}{\sigma}
+\end{equation}
+
+\paragraph{Rifiuto l'ipotesi nulla} se $|z| > z_{a}$
+\paragraph{Accetto l'ipotesi nulla} se $|z| \le z_{a}$
+
+\subsection{INVECE PER VEDERE SE $\mu \ge \mu_{0}$:}
+
+\paragraph{Ipotesi Nulla:}	H0: ho media $\mu \ge \mu_{0}$ (quella stimata) 
+\paragraph{Ipotesi Alternativa:}	H1: $\mu < \mu_{0}$ 
+
+$\newline$ 
+$p-value = \Phi(z)$
+$\newline$ 
+z è  la distanza tra il valore della media campionaria e la nostra media stimata diviso la 
+dev std della distribuzione
+\begin{equation}
+	z= \frac{\sqrt{n}(\bar{x}-\mu_{0})}{\sigma}
+\end{equation}
+
+Dunque:
+\paragraph{Rifiuto l'ipotesi nulla} se $|z| < -z_{a}$
+\paragraph{Accetto l'ipotesi nulla} se $|z| \ge -z_{a}$
+
+
+
+\section{Stima della Proporzione di popolazione}
+
+La proporzione della popolazione è uno stimatore della probabilità di un evento bernoulliano
+
+
+$\hat{p}$ = p cappello
+
+Intervalli di confidenza (inferenza) a due lati per un proporzione di popolazione:
+
+$p \in (\hat{p} - z_{\frac{\alpha}{2}}*\sqrt{\frac{\hat{p}*(1-\hat{p})}{n}} ,
+\hat{p} +z_{\frac{\alpha}{2}}*\sqrt{\frac{\hat{p}*(1-\hat{p})}{n}})$
+\newline
+con $\hat{p} = \frac{x}{n}$
+
+\subsection{Intervalli di confidenza a un lato per una proporzione di popolazione:}
+
+$p \in (\hat{p} - z_{a}\sqrt{\frac{\hat{p}*(1-\hat{p})}{n}}, 1 )$
+$\newline$ 
+$\newline$ 
+$p \in (0 , \hat{p} +z_{a}\sqrt{\frac{\hat{p}*(1-\hat{p})}{n}} )$
+
+\section{Test di ipotesi a due lati:}
+\paragraph{Ipotesi Nulla:}	H0: $p = p_{0}$
+\paragraph{Ipotesi Alternativa:}	H1: $p \ne p_{0}$
+
+\paragraph{p-value}
+Due valori possibili:
+(X crediamo sia una binomiale coi parametri stimati)
+\begin{equation}
+	\hat{p}  =\frac{\bar{x}}{n} > p_{0} \Rightarrow  p-value=2*P(X \le \bar{x})
+\end{equation}
+\begin{equation}
+	\hat{p} =\frac{\bar{x}}{n} < p_{0} \Rightarrow
+	p-value=2*FI(-|z|)\Rightarrow z=\frac{\bar{x}-np_{0}}{\sqrt{(np_{0}(1-p_{0}))}}
+\end{equation}
+
+Dunque:
+\paragraph{Accetto l'ipotesi nulla} se $|z| \le z_{\frac{\alpha}{2}}$
+\paragraph{Rifiuto l'ipotesi nulla} se $|z| >z_{\frac{\alpha}{2}}$
+
+
+
+
+
+\section{Test del Chi quadro di Pearson}
+Questo test verifica se la mia distribuzione segue effettivamente la distribuzione con
+cui l'ho modellata (bonta' dell'adattamento)
+$\newline$
+
+\paragraph{Ipotesi Nulla} $H_{0}$: $P(Y=i)=  p_{i}\ \ \ \ \ 1 \le i \le k$
+\paragraph{Ipotesi Alternativa} $H_{1}$: $P(Y=i) \neq  p_{i}\ \ \ \ \ 1 \le i \le k$
+$\newline$ 
+
+Ciascuna delle var $Y_{j}$ assume il valore i con probabilita' $p_{i}$, quindi $X_{i}$ e binomiale di
+parametri n e $p_{i}$ e il suo valore atteso e' $np_{i}$
+
+T:	$\sum_{1}^{K-1} \frac{(X_{i} - np_{i})^2}{np_{i}}$
+$\newline$ 
+
+L'ipotesi nulla va rifiutata per T troppo grande. Quando T
+e' troppo grande dipende dal livello di significativita' a del test.
+La regione critica la calcolo con il valore c per cui:
+$\newline$ 
+
+P H0(T $\ge$ c)= a
+$\newline$ 
+
+Ovvero quando H0 è falsa, T è superiore a c con probabilità a
+Il valore critico si trova sfruttando il fatto che con n molto grande la distr. t si comporta
+come una chi quadro con k-1 gradi di libertà.
+Quindi c va come $\chi^2_{a,k-1}$
+$\newline$ 
+
+Dunque:
+\paragraph{Accetto l'ipotesi nulla} se $T > \chi^2_{a,k-1}$
+\paragraph{Rifiuto l'ipotesi nulla} se $T \le \chi^2_{a,k-1}$
+
+\subsection{Test Chi quadro per due campioni indipendenti:}
+
+\paragraph{Tabella di contingenza:}
+$\newline$ 
+
+Le tabelle di contingenza sono un particolare tipo di tabelle a doppia entrata
+(cioè tabelle con etichette di riga e di colonna), utilizzate in statistica per
+rappresentare e analizzare le relazioni tra due o più variabili.
+In esse si riportano le frequenze congiunte delle variabili.
+$\newline$ 
+
+
+Questa variante del test del chi quadro verifica l'ipotesi che due campioni siano indipendenti
+e derivino dalla stessa popolazione.
+Cioè
+\paragraph{Ipotesi Nulla} $H_{0}$: le variabili sono indipendenti.
+\paragraph{Ipotesi Alternativa} $H_{1}$: le variabili non sono indipendenti.
+$\newline$ 
+Organizzati i dati in una tabella di contingenza g*2:
+$\newline$ 
+
+$\chi^2$ (chi quadro) va come :
+$\sum_{i=1}^{g} \sum_{j=1}^{2} \frac{(n_{ij} - E_{ij})^2}{E_{ij}}$
+== $\sum_{i=1}^{g} \sum_{j=1}^{2}  \frac{n_{ij}^2}{E_{ij}} - n $
+
+dove:
+\begin{itemize}
+	\item nij = numero casi osservati nel campione j che corrispondono alla iesima modalita
+	\item Eij = numero di casi attesi nel campione j e per la iesima modalita' del caso se H0 fosse vera
+ 	\item g = numero di modalita' nella quale si esprime la variabile nominale
+	\item n = la numerosita' dei due campioni messi insieme
+\end{itemize}
+per via dell'ipotesi dell'indipendenza dei campioni si ha:
+$\newline$ 
+\hspace*{20mm}%
+$E_{ij}= \frac{n_{i} n_{j}} {n}$
+
+con $n_{j}$ = numerosita' di ciascun campione
+$n_{i}$= la frequenza marginale per ciascuna delle g modalita'
+$\newline$ 
+
+Quindi con campioni sufficientemente grandi la nostra funz va come la $\chi_{g-1}^2$
+e tutte le osservazione fatte sopra sono vere anche in questo caso.
+$\newline$ 
+\chapter{Regressione Lineare}
+La regressione è una tecnica statistica che si usa per lo studio della correlazione di una o più
+variabili indipendenti: $\newline$
+\section{Regressione Lineare Semplice:} si cercano i parametri di una funzione lineare che leghi Y a X.
+In particolare studiamo il coefficiente angolare della retta:
+È positivo quando Y cresce all'aumentare di X
+È negativo quando Y decresce all'aumentare di X
+È 0 se Y non varia al variare di X
+$\newline$ 
+Il coefficiente angolare è la covarianza di x e y diviso la varianza campionaria di X, cioè$\newline$
+$b_{1} = \frac{COV(X,Y)}{s_{x}^2}$
+Invece l'intercetta è $b_{0} = \bar{y} - b_{1}\bar{x}$
+\chapter{Domande Orale}
+
+$\newline$
+$\newline$
+$\newline$
+l' uniforme , un esercizio sull'uniforme simile all'esame poi 
+media campionaria, varianza e media della media campionaria 
+(anche nel caso uniforme che avevo calcolato prima), legge debole dei grandi numeri, chebishev
+\newline
+ dimostrazione della legge debole dei grandi numeri
+\newline
+ l'esercizio del compito quello con XY e poi una domanda strana,
+ tipo avevo delle variabili aleatorie X1... Xn e Y1...Yn e dovevo dirgli i vari legami
+\newline
+ multinomiale
+\newline
+\newline
+ CDF, PMF, PDF, valore atteso varianza le due diseguaglianze e la legge debole dei grandi numeri,
+ varianza, media, varianza campionaria e media campionaria, limite centrale,
+ e poi le varie distribuzioni, geometrica Poisson e il suo processo,  esponenziale
+\newline
+\section{Legame tra la Binomiale Negativa e la Normale}
+Normal approximation to the Negative Binomial is valid when the number of required successes, s, is large, and the 
+probability of success, p, is neither very small nor very large. This approximation can be justified via Central Limit
+Theorem, because the NegBin(s, p) distribution can be thought of as the sum of s independent NegBin(1, p) distributions.
+In practice, some difficulty is knowing whether the values for s and p fall within
+the bounds for which the Normal distribution
+is a good approximation. The smaller the value of p, the longer the tail of a NegBin(1,p) distribution would be.
+\section{Approssimare una variabile aleatoria a cazzo a una Normale standard passando dal limite centrale}
+La mia variabile aleatoria X ha media $\mu$ e varianza $\sigma^{2}$
+Io col teorema del limite centrale determino la media e la varianza della variabile $X_{n}$ data dalla somma di 
+X con se stessa per un numero $n$ molto grande di volte,
+$\newline$
+Mi ritrovo con $X_{n} = \sum_{}^{n} X_{i}$
+$\newline$
+Che ha parametri $n\mu$ e $n\sigma^{2}$, siccome questa somma va come una gaussiana per il teorema del limite centrale,
+applicando la formula $\bar{X}  = \frac{X_{n}- n\mu}{\sigma \sqrt{n}}$
+so che $\bar{X}$ è una normale standard. 
+
+\section{Intervalli di confidenza}
+GLi intervalli di confidenza definiscono zone in cui posso trovare il parametro $\Theta$ 
+che mi interessa. Sono o a due lati o a un lato.
+Tipo considerando la t-distribution l'intervallo di confidenza
+per la media di una popolazione $\mu$ si basa su un campione di n dati continui,
+una media campionaria $\hat{x}$ e una deviazione standard campionaria $S$:
+con un certo livello di confidenza $1-\alpha$ l'intervallo a due lati della media di una popolazione
+è dato da $\mu \in (\bar{x} - \frac{t_{\frac{\alpha}{2},n-1} S}{\sqrt{n}},
+\bar{x} + \frac{t_{\frac{\alpha}{2},n-1} S}{\sqrt{n}})$,
+invece a un lato è uguale ma con $\alpha$ invece che $\frac{\alpha}{2}$ poichè definisce il limite superiore
+o inferiore mentre l'altro estremo è $-\infty$ o  $+\infty$. 
+$\newline$
+Per un punto critico fissato, la lunghezza dell'intervallo è $L$ inversamente proporzionale alla radice della dimensione
+del numero dei campioni
+\section{Teorema del limite centrale}
+Dato un numero sufficientemente grande di variabili aleatorie indipendenti identicamente 
+distribuite(stessa media e varianza)
+, la loro somma tende a essere una normale con media $n\mu$ e varianza $n\sigma^2$
+\section{Fundamental bridge:}
+http://www.hcs.harvard.edu/cs50-probability/fundamentalbridge.php(Blitzstein) ha detto che è una formula
+$\newline$
+ $E(I_{J}) =  P(J)$
+$\newline$
+Vuol di che se faccio una variabile I che può esse 1 o 0,
+alla fine il valore medio di questa variabile è pari alla probabilità dell'evento J
+$\newline$
+\section{Cosa è un indicatore}
+È quella variabile che c'ha valore 0 o 1 a seconda che becca un successo o no
+(una variabile di Bernoulli)(una Booleana)
+\section{Cioè basta che gli dimostri chebishev😂}
+1: Ma che cazzo vuol dire "basta" ma che è chebishev
+$\newline$
+2: Nella statistica descrittiva la disuguaglianza di Chebishev
+afferma che un valore a caso della distribuzione in esame ha
+probabilità di almeno  $\frac{1}{\lambda^2}$
+di essere situato nell'intervallo compreso tra $\mu - \lambda\sigma$ e
+$\mu + \lambda\sigma$ 
+$\newline$
+3: Per variabili dotate di media e varianza non si può trovare una disuguaglianza migliore di quella di Chebishev
+
+\section{Cos'è il test di verifica di un'ipotesi?}
+Per esempio dato un valore $\mu_{0}$ rimandiamo al manga delle scienze volume 05, Statistica.
+(che lo spiega molto bene con l'ausilio delle marionette)
+\section{Errori di Tipo 1 e 2}
+L'errore di tipo 1 consiste nel rigettare H0 pur essendo H0 è vera.
+Definito $\alpha$ il livello di significatività scelto per il test di ipotesi,
+esso esprime anche la probabilità che si manifesti un errore detto di tipo 1. 
+L'errore di tipo 2 è quando non si rigetta H pur essendo $H_{0}$ falsa.
+
+\chapter{Ringraziamenti}
+Grazie  Tomonobu Itagaki
+$\newline$
+"Questi appunti sono una merda, non li ho scritti io. Ci sarebbero state più tette" - Nobu
+$\newline$
+Grazie Lindo Ferretti.
+$\newline$
+"Lode a piccioni e a Tomonobu.
+$\newline$
+Tu devi scomparire anche se non ne hai voglia, e contare solo su Hayter".
+$\newline$
+Grazie autore del manga delle scienze Shin Takahashi
+(non abbiamo capito se è l'autore o il detentore dei diritti)
+$\newline$
+Di nuovo grazie Ananas Maldestro.
+
+
+
+
+
+
+
+
+\end{document}
