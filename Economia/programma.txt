@@ -1,0 +1,75 @@
+Programma di Pillo:
+
+Finanza aziendale e obiettivi dell’impresa
+Decisioni di investimento e finanziamento, obiettivo finanziario dell'impresa, obiettivo degli
+azionisti, trade off di un investimento, separazione tra proprietà e controllo, obiettivi dell’impresa e
+corporate governance.
+
+Valutazione degli investimenti
+Elementi di matematica finanziaria, valori attuali e tassi di rendimento, costo opportunità del
+capitale, valore attuale netto, tempo di recupero, costo annuo equivalente, tasso interno di
+rendimento, decisioni di investimento quando le risorse sono limitate, stima dei flussi di cassa su
+base incrementale.
+
+Il bilancio come strumento di analisi della gestione
+Natura e scopo della contabilità, principi contabili di base: stato patrimoniale e formazione del
+reddito in conto economico, schema di bilancio civilistico e riclassificazione, sistemi contabili e
+modalità di contabilizzazione, ricavi e attività monetarie, rimanenze e costo del venduto,
+immobilizzazioni e ammortamento, passività e capitale netto, analisi di bilancio.
+
+Produzione, vincoli tecnologici, costi, domanda di mercato, scelte in condizioni di incertezza
+Input e Output. Insieme di produzione, funzione di produzione e isoquanto. Esempi di tecnologie produttive.
+ Produttività media e marginale di un fattore. Saggio tecnico di sostituzione. Breve periodo e lungo periodo. 
+ Rendimenti di scala. Costo opportunità e costi di produzione. Costi fissi, costi non recuperabili e costi variabili.
+ Funzioni di costo totale, costo medio e costo marginale. Minimizzazione dei costi e combinazione ottima di fattori.
+ Sentiero di espansione della produzione e funzione di costo totale di lungo periodo. Funzione di costo multiprodotto.
+ Economie di scala ed economie di varietà. Domanda di mercato e surplus del consumatore. 
+ Utilità attesa e scelte in condizioni di incertezza.
+
+Forme di mercato e comportamento dell’impresa
+Concorrenza perfetta e impresa “price taker”. Ricavo totale, medio e marginale.
+ Massimizzazione del profitto e significato del profitto nullo. Condizione di chiusura e curva di offerta dell’impresa nel breve periodo.
+ Curva di offerta dell’industria nel breve periodo. 
+ Elasticità dell’offerta. Surplus del produttore.
+ Curva di offerta di lungo periodo dell’impresa e dell’industria.
+ Equilibrio dell’industria. Efficienza paretiana. 
+ Monopolio e comportamento monopolistico. 
+ Perdita netta di monopolio. Discriminazione dei prezzi. 
+ Monopolio naturale e regolamentazione. 
+ Oligopolio e comportamento strategico: modello di Cournot, modello di Bertrand, modello di Stackelberg. 
+
+Forme istituzionali e confini verticali dell’impresa
+Titolarità dell’impresa e separazione fra proprietà e controllo.
+ Forme societarie dell’impresa: società di persone e società di capitali. 
+ Confini verticali dell’impresa e relazioni verticali fra imprese: esternalità verticale,
+ restrizioni verticali (tariffa in due parti, prezzo imposto, quantità imposta,
+ vendita collegata con prezzo imposto), integrazione verticale.
+ Gruppi di imprese: gruppo paritetico, gruppo organico e reti di imprese.
+
+Il bilancio come strumento di analisi per la gestione aziendale 
+La natura e lo scopo della contabilità. I principi contabili di base.
+ Lo Stato Patrimoniale. Il Conto Economico. I ricavi e le attività monetarie.
+ Le rimanenze e il costo del venduto. Le immobilizzazioni e lʹammortamento.
+ Lʹanalisi del bilancio attraverso gli indici.
+
+Analisi dei costi 
+Lʹanalisi dei costi per le decisioni: la contabilità direzionale. 
+La classificazione dei costi in funzione del loro comportamento.
+ Il margine di contribuzione e le relazioni reddito‐volume. I costi pieni e il loro impiego. 
+
+Decisioni di breve termine tra alternative diverse
+Configurazioni di costo per diversi problemi decisionali.
+ I margini di contribuzione e le relazioni fra reddito e volume. 
+ Le decisione di breve termine fra alternative diverse.
+ I problemi tipici di scelta fra più alternative: decisioni make or buy, 
+ determinazione del mix produttivo, eliminazione di una linea produttiva.
+
+Decisioni di lungo termine: scelta degli investimenti
+Le fasi del processo di scelta degli investimenti.
+ Elementi di matematica finanziaria: attualizzazione e rendite. 
+ Il costo opportunità del capitale. Il metodo del valore attuale netto.
+ I flussi di cassa per il calcolo del VAN (flussi differenziali al netto degli effetti fiscali).
+ Il costo annuo equivalente. Altri metodi di valutazione degli investimenti:
+ il tasso interno di rendimento (limiti dell'uso del tasso interno di rendimento),
+ il tempo di recupero, il tempo di recupero attualizzato. 
+ Alberi di decisione e valore delle opzioni (opzione di espansione e opzione di abbandono).
